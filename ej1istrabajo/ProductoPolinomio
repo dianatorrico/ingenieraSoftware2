@@ -1,0 +1,39 @@
+public class ProductoPolinomio2Grado {
+    PolinomioSegundoGrado p1;
+    PolinomioSegundoGrado p2;
+
+    //constructor
+    public ProductoPolinomio2Grado(PolinomioSegundoGrado p1, PolinomioSegundoGrado p2) {
+        this.p1 = p1;
+        this.p2 = p2;
+    }
+
+    //métodos básicos
+    public void setP1(PolinomioSegundoGrado polinomio){
+        this.p1 = polinomio;
+    }
+    
+    public PolinomioSegundoGrado getP1(){
+        return p1 ;
+    }
+
+    public void setP2(PolinomioSegundoGrado polinomio){
+        this.p2 = polinomio;
+    }
+    public PolinomioSegundoGrado getP2(){
+        return p2 ;
+    }
+    
+    
+    //calcular el producto 
+    public String productoPolinomios(){ 
+        PolinomioCuartoGrado p4 = new PolinomioCuartoGrado();
+        p4.setA(p1.getA()*p2.getA());
+        p4.setB((p1.getA()*p2.getB())+(p1.getB()*p2.getA()));
+        p4.setC((p1.getA()*p2.getC())+(p1.getB()*p2.getB())+(p1.getC()*p2.getA()));
+        p4.setD((p1.getC()*p2.getB())+(p1.getB()*p2.getC()));
+        p4.setE(p1.getC()*p2.getC());
+       return p4.toString();
+
+    }
+}
